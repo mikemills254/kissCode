@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="">
+    </head>
+    <body>
+        <div class="sidebar-container"></div>
+        
+        <script src="" async defer></script>
+        <script>
+            // sidebar.js
+            document.addEventListener("DOMContentLoaded", function() {
+                // Load sidebar content from sidebar.html
+                fetch("Sidebar.html")
+                    .then(response => response.text())
+                    .then(html => {
+                        // Insert the sidebar content into the sidebar element in each HTML file
+                        document.querySelectorAll(".sidebar-container").forEach(function(element) {
+                            element.innerHTML = html;
+                        });
+                    })
+                    .catch(error => {
+                        console.error("Error loading sidebar:", error);
+                    });
+            });
+        </script>
+    </body>
+</html>

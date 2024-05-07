@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Aqua</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="topbar-container"></div>
+        <div class="main">
+            <div class="sidebar-container"></div>
+            <div class="main-container">
+                <b class="">Dashboard</b>
+                <div class="top-container">
+                    <div>
+                        <i class="bi bi-people"></i>
+                        <p>Customers</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-people"></i>
+                        <p>Bills</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-people"></i>
+                        <p>Expenses</p>
+                    </div>
+                    <div>
+                        <i class="bi bi-chat-square"></i>
+                        <p>SMS</p>
+                    </div>
+                </div>
+                <div class="bottom-containers">
+                    <div class="bottom-containers-one">
+                        <h1>Customer Report</h1>
+                        <div class="customer-report-container">
+                            <div class="progress-bar-container">
+                                <p>Pending connections</p>
+                                <div class="progress-bar">
+                                    <div class="pending-connections-level"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="progress-bar-container">
+                                <p>Active</p>
+                                <div class="progress-bar">
+                                    <div class="active-level"></div>
+                                </div>
+                            </div>
+                        
+                            <div class="progress-bar-container">
+                                <p>Disconnected</p>
+                                <div class="progress-bar">
+                                    <div class="disconnected-level"></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    <div class="bottom-containers-two">
+                        <h1>Earning Report</h1>
+                        <div class="earning-report-container">
+                            <div class="graph-container">
+                                <canvas id="earningChart" class="earningChart"></canvas>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+        <!-- <script>
+            document.addEventListener('DOMContentLoaded', () => {
+                if(localStorage.getItem("accessToken")){
+                    alert("no access token")
+                    window.location.href = '/Authentication/Login.html'
+                } else {
+                    alert('accessToken available')
+                    window.location.href = '/index.html'
+                }
+            })
+        </script> -->
+            <script src="Utils/Utils.js"></script>
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+            <script>
+                const myChart = new Chart("earningChart", {
+                    type: "bar",
+                    data: {
+                        labels: ["January", "February", "March", "April"],
+                        datasets: [
+                            {
+                                label: "Income",
+                                data: [4.2, 2.3, 3.5, 5.5],
+                                backgroundColor: 'blue',
+                                
+                            },
+                            {
+                                label: "Expenses",
+                                data: [2.5, 4.2, 1.9, 2.8],
+                                backgroundColor: 'yellow',
+                            },
+                            {
+                                label: "Growth",
+                                data: [2, 2, 3, 5],
+                                backgroundColor: 'gray',
+                            }
+                        ]
+                    },
+                    options: {
+                        scales: {
+                            yAxes: [{
+                                ticks: {
+                                    beginAtZero: true,
+                                    stepSize: 1
+                                }
+                            }]
+                        }
+                    }
+                });
+            </script>
+    </body>
+</html>

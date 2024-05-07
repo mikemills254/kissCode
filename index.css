@@ -1,0 +1,151 @@
+::-webkit-scrollbar {
+    display: none;
+}
+body {
+    background-color: #e7e7e7;
+    display: flex;
+    flex-direction: column;
+}
+.main {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    /* overflow: hidden; */
+}
+
+.sidebar-container {
+    width: 15%;
+    /* position: absolute; */
+}
+
+.main-container {
+    width: 100%;
+    padding-top: 5rem;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    /* overflow: hidden; */
+}
+
+.main-container b {
+    font-weight: bold;
+    margin-inline-start: 2.5rem;
+    font-size: 30px;
+}
+.top-container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 40px;
+}
+
+.top-container div {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    width: 40%;
+    height: 10rem;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 10px;
+    border-radius: 10px;
+}
+
+.top-container div .bi {
+    font-size: 50px;
+}
+
+.top-container div p {
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.bottom-containers {
+    display: flex;
+    flex-direction: row;
+    /* width: 100vw; */
+    align-items: center;
+    justify-content: space-between;
+    padding: 40px;
+    gap: 20px;
+}
+
+.bottom-containers-one {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    /* align-items: center; */
+    height: 100%;
+}
+
+.bottom-containers-one h1, .bottom-containers-two h1 {
+    font-size: 20px;
+}
+
+.customer-report-container, .earning-report-container {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    padding: 20px;
+    background-color: white;
+    width: 40vw;
+    height: 100%;
+    /* justify-content: space-between; */
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px; 
+    background-color: lightgray;
+    border-radius: 5px;
+    margin-top: 5px;
+}
+
+.progress-bar-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.pending-connections-level {
+    width: 50%; 
+    height: 100%;
+    background-color: #ffc107; 
+    border-radius: 5px;
+}
+
+.active-level {
+    width: 80%; 
+    height: 100%;
+    background-color: #28a745;
+    border-radius: 5px;
+}
+
+.disconnected-level {
+    width: 30%; 
+    height: 100%;
+    background-color: #dc3545;
+    border-radius: 5px;
+}
+
+/* chart */
+.bottom-containers-two {
+    /* background-color: #ffc107; */
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 40rem;
+}
+.earningChart {
+    /* background-color: #ffc107; */
+    width: 100%;
+}
+
+.graph-container {
+    display: flex;
+    flex-direction: column-reverse;
+}

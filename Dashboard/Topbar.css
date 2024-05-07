@@ -1,0 +1,12 @@
+.top {
+    background-color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 20px;
+    height: 60px;
+    padding-inline: 60px;
+    position: fixed;
+    width: 100vw;
+    justify-content: space-between;
+}
