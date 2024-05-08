@@ -72,56 +72,55 @@
             </div>
         </div>
         
-        
-        
-        <!-- <script>
+        <script>
             document.addEventListener('DOMContentLoaded', () => {
-                if(localStorage.getItem("accessToken")){
-                    alert("no access token")
-                    window.location.href = '/Authentication/Login.html'
-                } else {
-                    alert('accessToken available')
-                    window.location.href = '/index.html'
-                }
-            })
-        </script> -->
-            <script src="Utils/Utils.js"></script>
-            <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-            <script>
-                const myChart = new Chart("earningChart", {
-                    type: "bar",
-                    data: {
-                        labels: ["January", "February", "March", "April"],
-                        datasets: [
-                            {
-                                label: "Income",
-                                data: [4.2, 2.3, 3.5, 5.5],
-                                backgroundColor: 'blue',
-                                
-                            },
-                            {
-                                label: "Expenses",
-                                data: [2.5, 4.2, 1.9, 2.8],
-                                backgroundColor: 'yellow',
-                            },
-                            {
-                                label: "Growth",
-                                data: [2, 2, 3, 5],
-                                backgroundColor: 'gray',
-                            }
-                        ]
-                    },
-                    options: {
-                        scales: {
-                            yAxes: [{
-                                ticks: {
-                                    beginAtZero: true,
-                                    stepSize: 1
-                                }
-                            }]
-                        }
+                const currentUrl = window.location.href;
+                const isLoginPage = currentUrl.includes('/Authentication/Login.html');
+
+                    if (!localStorage.getItem("accessToken")) {
+                        return window.location.replace = '/Authentication/Login.html';
+                    } else {
+                        return window.location.replace = 'index.html';
+                        // Do nothing, as the user is already on the desired page
                     }
-                });
-            </script>
+            });
+        </script>
+        <script src="Utils/Utils.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+        <script>
+            const myChart = new Chart("earningChart", {
+                type: "bar",
+                data: {
+                    labels: ["January", "February", "March", "April"],
+                    datasets: [
+                        {
+                            label: "Income",
+                            data: [4.2, 2.3, 3.5, 5.5],
+                            backgroundColor: 'blue',
+                        },
+                        {
+                            label: "Expenses",
+                            data: [2.5, 4.2, 1.9, 2.8],
+                            backgroundColor: 'yellow',
+                        },
+                        {
+                            label: "Growth",
+                            data: [2, 2, 3, 5],
+                            backgroundColor: 'gray',
+                        }
+                    ]
+                },
+                options: {
+                    scales: {
+                        yAxes: [{
+                            ticks: {
+                                beginAtZero: true,
+                                stepSize: 1
+                            }
+                        }]
+                    }
+                }
+            });
+        </script>
     </body>
 </html>

@@ -13,7 +13,7 @@ document.getElementById("eye").addEventListener("click", () => {
     }
 });
 
-document.getElementById("submit-login").addEventListener("click", (event) => {
+document.getElementById("submit-login").addEventListener("click", async (event) => {
     event.preventDefault();
 
     const emailInput = document.getElementById("email");
@@ -30,6 +30,26 @@ document.getElementById("submit-login").addEventListener("click", (event) => {
 
     console.log("Email:", email);
     console.log("Password:", password);
+
+    url = "http://localhost:8000/api/v1/login"
+
+    const res = await fetch(url, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+            email,
+            password
+        })
+    })
+
+    if(!res.ok) {
+        throw new Error("error loging in", res.statusText)
+    }
+    const data = await res.json()
+    console.log("data",data)
+
+    localStorage.setItem("accessToken",data.accessToken)
+    // window.location.replace = "/index.html";
 
     emailInput.value = "";
     passwordInput.value = "";

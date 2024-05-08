@@ -34,12 +34,18 @@
 
 .top-filter button {
     width: 100px;
-    padding: 5px;
+    padding: 8px;
+    background-color: #003bd7;
+    color: white;
+    border: 0;
+    cursor: pointer;
+    border-radius: 2px;
 }
 
 .customers-details {
-    background-color: red;
+    background-color: #003bd7;
     cursor: pointer;
+    color: white;
 }
 
 .bottom-containers-reports {
@@ -59,4 +65,30 @@
 
 .alternate-color {
     background-color: green;
+}
+
+/* media query */
+
+@media only screen and (max-width: 767px) {
+    .top-filter {
+        /* background-color: red; */
+        width: 95%;
+    }
+    .top-containers {
+        padding: 5px;
+    }
+    .top-containers .form {
+        display: flex;
+        flex-direction: column;
+    }
+    .top-containers .form input {
+        width: 90%;
+        height: 30px;
+    }
+    .bottom-containers-reports {
+        display: flex;
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
 }

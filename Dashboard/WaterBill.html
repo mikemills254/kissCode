@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="/Assets/css/waterBill.css">
+        <link rel="stylesheet" href="/index.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.3.0/font/bootstrap-icons.css">
+    </head>
+    <body>
+        <div class="topbar-container"></div>
+        <div class="main">
+            <div class="sidebar-container"></div>
+            <div class="main-container">
+                <b class="">
+                    <i class="bi bi-house"></i>
+                    WaterBill
+                </b>
+                <div class="tab-container">
+                    <div class="tab">
+                        <button class="tablinks active" onclick="openTab(event, 'invoices')">All</button>
+                        <button class="tablinks" onclick="openTab(event, 'addbill')">Add Bill</button>
+                    </div>
+                    <div id="invoices" class="tabcontent" style="display: block;">
+                        <div class="search-container">
+                            <i class="bi bi-search"></i>
+                            <input
+                                placeholder="search"
+                                name="search"
+                                id="search"
+                            />
+                        </div>
+                        <table id="waterTable">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Billing Date</th>
+                                    <th>Meter No.</th>
+                                    <th>Previous Reading</th>
+                                    <th>Current Reading</th>
+                                    <th>Consumption</th>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div id="addbill" class="tabcontent">
+                        <form>
+                            <label for="name">
+                                Name
+                                <input
+                                    placeholder="Enter name"
+                                    name="name"
+                                    type="text"  
+                                />
+                            </label>
+                            <label for="meterNo">
+                                Meter No.
+                                <input
+                                    placeholder="Meter No"
+                                    name="meterNo."  
+                                    type="number"
+                                />
+                            </label>
+                            <label for="billingDate">
+                                Billing date
+                                <input
+                                    placeholder="Billing date"
+                                    name="billingDate"
+                                    type="date"
+                                />
+                            </label>
+                            <label for="previousReading">
+                                Previous Reading
+                                <input
+                                    placeholder="Previous Reading"
+                                    name="previousReading"
+                                    type="number"
+                                />
+                            </label>
+                            <label for="currentReading">
+                                Current Reading
+                                <input
+                                    placeholder="Current Reading"
+                                    name="currentReading" 
+                                    type="number"
+                                />
+                            </label>
+                            <label for="consumption">
+                                Consumption
+                                <input
+                                    placeholder="Consumption"
+                                    name="consumption"
+                                    type="number"
+                                />
+                            </label>
+                            <label for="amount">
+                                Amount
+                                <input
+                                    placeholder="Amount"
+                                    name="amount"
+                                    type="number"
+                                />
+                            </label>
+                        </form>
+                        <button>
+                            Submit
+                        </button>
+                    </div>
+                </div>
+            </div>
+        
+        <script src="/Assets/js/Utils.js"></script>
+        <script src="/Assets/js/waterBill.js"></script>
+        <script>
+            function openTab(evt, tabName) {
+                var i, tabcontent, tablinks;
+                tabcontent = document.getElementsByClassName("tabcontent");
+                for (i = 0; i < tabcontent.length; i++) {
+                    tabcontent[i].style.display = "none";
+                }
+                tablinks = document.getElementsByClassName("tablinks");
+                for (i = 0; i < tablinks.length; i++) {
+                    tablinks[i].className = tablinks[i].className.replace(" active", "");
+                }
+                document.getElementById(tabName).style.display = "block";
+                evt.currentTarget.className += " active";
+            }
+
+            document.getElementById("defaultOpen").click();
+
+        </script>
+    </body>
+</html>

@@ -1,3 +1,8 @@
+* {
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    padding: 0px;
+    margin: 0px;
+}
 ::-webkit-scrollbar {
     display: none;
 }
@@ -5,6 +10,7 @@ body {
     background-color: #e7e7e7;
     display: flex;
     flex-direction: column;
+    overflow: hidden;
 }
 .main {
     width: 100vw;
@@ -148,4 +154,83 @@ body {
 .graph-container {
     display: flex;
     flex-direction: column-reverse;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .top-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 5px;
+        /* background-color: red; */
+        padding: 5px;
+        width: 95%;
+    }
+    .top-container div {
+        width: 100%;
+    }
+    .main-container b {
+        font-size: large;
+        margin-inline-start: 0.5rem;
+    }
+    .top-container div .bi {
+        font-size: 2em !important
+    }
+    .top-container div p {
+        font-size: 14px;
+    }
+    .bottom-containers {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        width: 95%;
+        margin-top: 20px;
+    }
+    .bottom-containers-one {
+        width: 100%;
+        height: 20%;
+    }
+    .customer-report-container {
+        width: 87%;
+        height: 500%;
+    }
+    .bottom-containers-two {
+        /* display: none; */
+        justify-content: center;
+        height: 40vh;
+        width: 100% !important;
+        margin-bottom: 20px;
+    }
+    .earning-report-container {
+        padding: 0;
+        width: 100%;
+        height: 100%;
+
+    }
+    .main-container {
+        padding: 60px 4px 0px 0px;
+        /* height: 100%; */
+    }
+    .sidebar-container {
+        width: 20%;
+    }
+    canvas {
+        height: 100%;
+    }
+    .tab-container {
+        padding: 5px;
+        margin-bottom: 10rem;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .sidebar ul li a span {
+        display: none;
+    }
+    .sidebar ul {
+        padding-inline-start: 0;
+    }
+    .sidebar ul li {
+        justify-content: center;
+    }
 }

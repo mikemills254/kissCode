@@ -31,6 +31,7 @@ table {
     margin-top: 10px;
     font-family: arial, sans-serif;
     border-collapse: collapse;
+    font-size: 10px;
 }
 
 td, th {
@@ -38,6 +39,7 @@ td, th {
     text-align: left;
     padding: 15px;
     font-size: 15px;
+    cursor: pointer;
 }
 
 .search-container {
@@ -75,4 +77,50 @@ td, th {
 
 .actions .bi {
     font-size: 18px;
+}
+
+.typeimages {
+    font-size: 2px;
+    width: 50px;
+}
+
+form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 40px;
+    gap: 40px;
+}
+
+form label {
+    display: flex;
+    flex-direction: column;
+}
+
+form input {
+    border: 0;
+    border-bottom: 1px solid black;
+    padding: 10px;
+}
+
+
+@media only screen and (max-width: 767px) {
+    .search-container {
+      width: 100%;
+    }
+  
+    .search-container .bi {
+      font-size: 13px;
+    }
+  
+    table {
+      width: 100%;
+      overflow-x: auto;
+      display: block;
+    }
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 5px;
+        font-size: 13px;
+    }
 }
